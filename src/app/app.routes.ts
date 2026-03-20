@@ -6,6 +6,9 @@ import { EditarCategoria } from './pages/editar-categoria/editar-categoria';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { AuthGuard } from './guards/auth.guard';
 import { ConsultarCategoria } from './pages/consultar-categoria/consultar-categoria';
+import { CadastrarTarefa } from './pages/cadastrar-tarefa/cadastrar-tarefa';
+import { ConsultarTarefa } from './pages/consultar-tarefa/consultar-tarefa';
+import { EditarTarefa } from './pages/editar-tarefa/editar-tarefa';
 
 export const routes: Routes = [
     {
@@ -43,5 +46,21 @@ export const routes: Routes = [
         path: "pages/editar-categoria/:id", //rota de navegação
         component: EditarCategoria, //classe do componente
         canActivate: [AuthGuard] //só pode logar se estiver autenticado
+    },
+    {
+        path: "pages/cadastrar-tarefa", //rota de navegação
+        component: CadastrarTarefa, //Classe do componente
+        canActivate: [AuthGuard]    //Aplicando o guardião
+    },
+    {
+        path: "pages/consultar-tarefa",
+        component: ConsultarTarefa, 
+        canActivate: [AuthGuard]
+
+    },
+    {
+        path: "pages/editar-tarefa/:id",
+        component: EditarTarefa,
+        canActivate: [AuthGuard]
     }
 ];
